@@ -1,6 +1,7 @@
 <h2>{{titulo}}</h2>
+<!-- *ngFor: directiva estructural que permite recorrer un array de objeto o array de cualquier tipo. -->
 <ul>
-    <li>Reebok Classic</li>
-    <li>Fila retro</li>
-    <li>Adidas Yezz</li>
+    <li *ngFor="let elmzapa of zapatillas">
+        {{elmzapa.nombre}} - <strong>{{elmzapa.precio}}</strong>
+    </li>    
 </ul>
