@@ -13,4 +13,8 @@ import {Component} from '@angular/core';
     </ul>
     `,
 })
-export class VideojuegoComponent {}
+export class VideojuegoComponent {
+    constructor(){
+        console.log("Se ha cargado el componente: videojuego.component.ts");
+    }
+}
