@@ -6,3 +6,7 @@ El componente hace de mediador entre la vista a través de la plantilla y la ló
 Plantillas: 
 Las plantillas van a definir la vista de los componentes.
 Son htmls y tienen sintaxis especial de angular. Trabajando con el databinding y las directivas.
+
+Decoradores y metadatos:
+Con los decoradores (patró de diseño) vamos a configurar dinamicamente atributos/metadatos de las clases y componentes.
+Los metadatos van a describir a las clases pero también describen relaciones, por ejemplo si tenemos un componente y una plantilla el metadatose va a encargar de decirle a Angular que ese compoenente y esa plantilla van juntos, entre otras muchas cosas.
