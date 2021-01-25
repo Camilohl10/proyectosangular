@@ -2,3 +2,7 @@ Componentes: Un componente al final ca a controlar un trozo de pantalla o de la 
 Todo lo que se puede ver en pantalla es controlado y gestionado por este tipo de elementos.
 La lógica de un componente dentro de una clase de angular es que da soporte a una vista interactuando con ella a través de un API con propiedades y métodos.
 El componente hace de mediador entre la vista a través de la plantilla y la lógica de la app donde se incluirá el modelo de datos, es decir una especie de controlador.
+
+Plantillas: 
+Las plantillas van a definir la vista de los componentes.
+Son htmls y tienen sintaxis especial de angular. Trabajando con el databinding y las directivas.
