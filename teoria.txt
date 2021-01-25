@@ -20,3 +20,6 @@ Son servicios que nos proveen de datos o funcionalidades mediante sus métodos. 
 Directivas:
 Son funcionalidades aplicables al DOM y a los elementos HTML en las plantillas de un componente. Por ejemplo una directiva puede servir para controlar que un div se muestre o no o recorrer un array en la vista (directivas estructurales, estructuras condiconales y de control) o incluso también  puede servir para darle un estilo u otro a un elemento del HTML o también para interactuar con el modelo de datos del componente.
 Básicamente son nuevos atributos para aplicarle a cualquier cosa en nuestra plantilla/vista.
+
+Modulos: 
+Angular permite tener modulos separados que podemos utlizar por separado para poder construir nuestra aplicación.
