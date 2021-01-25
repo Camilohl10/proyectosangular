@@ -1,1 +1,2 @@
 Un componente al final va a controlar un trozo de pantalla o de la vista.
+Todo lo que se puede ver en pantalla es controlado y gestionado por este tipo de elementos.
