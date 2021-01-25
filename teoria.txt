@@ -1,0 +1,1 @@
+Componentes: Un componente al final ca a controlar un trozo de pantalla o de la vista.
