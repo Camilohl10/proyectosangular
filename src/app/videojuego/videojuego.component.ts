@@ -9,6 +9,7 @@ import {Component} from '@angular/core';
         <li>Prince of persia</li>
         <li>Tekken</li>
         <li>Mario</li>
+        <li>Zeta</li>
     </ul>
     `,
 })
