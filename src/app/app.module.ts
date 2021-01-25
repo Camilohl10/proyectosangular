@@ -8,7 +8,8 @@ import { VideojuegoComponent} from './videojuego/videojuego.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VideojuegoComponent
   ],
   imports: [
     BrowserModule
