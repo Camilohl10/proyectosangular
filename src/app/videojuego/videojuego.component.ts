@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
+import {Component,ViewEncapsulation} from '@angular/core';
 
 @Component({
     selector: 'videojuego',
-    template: `
+    template: `    
     <h2>Componente de videojuego</h2>
     <ul>
         <li>GTA</li>
@@ -11,8 +11,9 @@ import {Component} from '@angular/core';
         <li>Mario</li>
         <li>Zeta</li>
     </ul>
-    `,
+    `,    
 })
+
 export class VideojuegoComponent {
     constructor(){
         console.log("Se ha cargado el componente: videojuego.component.ts");
