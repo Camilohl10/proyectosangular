@@ -3,7 +3,14 @@
     Bienvenido {{title}}!
   </h1>
   <p>Vamos a aprender angular juntos.</p>
-  <videojuego></videojuego>
+  
+  <!-- Boton para ocultar videojuego -->
+  <button (click)="ocultarVideojuegos(false) " *ngIf="mostrar_videojuegos">Ocultar</button>
+
+  <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">Mostrar</button>
+
+  <videojuego *ngIf="mostrar_videojuegos"></videojuego>
+
   <!-- Usando componente celular  -->
   <celular></celular>
   <!-- Usando componente zapatilla -->

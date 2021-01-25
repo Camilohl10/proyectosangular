@@ -1,10 +1,13 @@
 <!-- Interpolar una variable con las dos llaves {{variable de la clase del componente}}-->
-<h2>{{titulo}}</h2>
-<p>{{listado}}</p>
-    <ul>
-        <li>GTA</li>
-        <li>Prince of persia</li>
-        <li>Tekken</li>
-        <li>Mario</li>
-        <li>Zeta</li>        
-    </ul>
+<div class="targeta-videoj">
+  <h2>{{ titulo }}</h2>
+  <p>{{ listado }}</p>
+  <button (click)="cambiarTitulo()">Cambiar titulo</button>
+  <ul>
+    <li>GTA</li>
+    <li>Prince of persia</li>
+    <li>Tekken</li>
+    <li>Mario</li>
+    <li>Zeta</li>
+  </ul>
+</div>

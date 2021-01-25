@@ -1,11 +1,7 @@
-.videojuego{
-    background: burlywood;
-    width: 400px;
-    height: 300px;
+.targeta-videoj{
+    background: burlywood;   
     border-radius: 20px;
     border: 1px solid brown;
-    text-align: center;
-    background: darkgrey;
     color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }

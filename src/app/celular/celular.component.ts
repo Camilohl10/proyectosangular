@@ -23,9 +23,10 @@ import {Component,ViewEncapsulation} from '@angular/core';
         background-size: cover;
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 
                     0 6px 6px rgba(0,0,0,0.23);
-        height: 300px;
-        margin: 20px;
-        width: 300px;
+        /* height: 300px; */
+        /* margin: 20px; */
+        margin-top: 20px;
+        /* width: 300px; */
       }
     </style>
   `,
