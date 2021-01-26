@@ -1,7 +1,24 @@
-<h2>{{titulo}}</h2>
+<h2>{{ titulo }}</h2>
 <!-- *ngFor: directiva estructural que permite recorrer un array de objeto o array de cualquier tipo. -->
+<!-- Direciva ngIf : condición -->
+<!-- Hacer que aparezca una etiqueta cuando el precio sea menor o igual a 80 -->
+<p>Compra las zapatillas de las mejores marcas</p>
 <ul>
-    <li *ngFor="let elmzapa of zapatillas">
-        {{elmzapa.nombre}} - <strong>{{elmzapa.precio}}</strong>
-    </li>    
+  <li *ngFor="let marca of marcas, let indice = index">{{indice + " - "+ marca }}</li>
+</ul>
+<ul>
+  <li *ngFor="let deportiva of zapatillas">
+    <span [ngStyle]="{
+      'text-decoration': !deportiva.stock ? 'line-through':'none'
+    }"
+      >{{ deportiva.nombre }} -
+      <strong>{{ deportiva.precio }}&nbsp;</strong> <span *ngIf="!deportiva.stock">No disponible</span></span
+    >
+    <span
+      *ngIf="deportiva.precio <= 80 && deportiva.stock"
+      [style.background]="deportiva.precio <= 80 ? 'green' : 'transparent'"
+      [style.color]="deportiva.precio <= 80 ? 'white' : 'black'"
+      >¡EN OFERTA!</span
+    >
+  </li>
 </ul>
