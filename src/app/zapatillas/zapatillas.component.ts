@@ -39,6 +39,7 @@ export class ZapatillasComponent implements OnInit,DoCheck{
         console.log("CAMILO");
         this.getMarcas();
         this.marcasinRepetir();
+        console.log("valor de color: ",this.color.length, this.color.trim().length);
     }
 
     /* Sacamos las marcas si ya existen  */
@@ -54,6 +55,8 @@ export class ZapatillasComponent implements OnInit,DoCheck{
     }
 
     marcasinRepetir(){
+        console.log();
+        
         this.marcas.forEach((marca)=>{
             console.log(marca);
             if(this.marca_no_repetida.indexOf(marca) <0){

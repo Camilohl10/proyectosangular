@@ -45,19 +45,25 @@
 </ul>
 
 <p>El color de la mayoria de nuestras zapatillas es:</p>
-<ul [ngSwitch]="color">
+<label for="text2">Añadir color: </label>
+<input type="text" name="text2" id="textColor" [(ngModel)]="color">
+<ul [ngSwitch]="color.trim()">
   <li *ngSwitchCase="'yellow'">
     El color predominante es el:
     <span [ngStyle]="{ background: color }">Amarillo</span>.
   </li>
   <li *ngSwitchCase="'red'">
-    El color predominante es el: <span [ngStyle]="{ background: color }"></span>
+    El color predominante es el: <span [ngStyle]="{ background: color }">Rojo</span>
   </li>
   <li *ngSwitchCase="'blue'">
-    El color predominante es el: <span [ngStyle]="{ background: color }"></span>
+    El color predominante es el: <span [ngStyle]="{ background: color }">Azul</span>
   </li>
   <li *ngSwitchCase="'orange'">
     El color predominante es el:
     <span [ngStyle]="{ background: color }">Naranja</span>
+  </li>
+  <li *ngSwitchCase="color.trim().length<0">    
+    El color predominante es el:
+    <span [ngStyle]="{ background: color }">Agregar un color</span>
   </li>
 </ul>
