@@ -13,11 +13,12 @@ export class ZapatillasComponent implements OnInit{
     /* Se crea una variable de clase de tipo Array con tipo de datos Clase Zapatilla */
     public zapatillas:Array<Zapatilla>;
     public marcas: String[];
+    public color:string;
 
     constructor(){
         /* Se tiene que crear un array a la propiedad marcas, por que abajo se utiliza con el push */
+        this.color="yellow",
         this.marcas=new Array(),
-
         this.zapatillas=[           
             new Zapatilla('Nike Airmax', 'Nike','Rojas',40,true),
             new Zapatilla('Reebook Classic', 'Reebook','Blanco',80,false),
