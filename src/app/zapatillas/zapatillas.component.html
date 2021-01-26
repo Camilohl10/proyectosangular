@@ -2,9 +2,24 @@
 <!-- *ngFor: directiva estructural que permite recorrer un array de objeto o array de cualquier tipo. -->
 <!-- Direciva ngIf : condición -->
 <!-- Hacer que aparezca una etiqueta cuando el precio sea menor o igual a 80 -->
+<p>Añadir marca</p>
+<!-- [(ngModel)] es una directiva -->
+<!-- para usar ngModel hay que importarlo dentro del modulo de la app -->
+<p>
+  <input type="text" name="textp" id="text1" [(ngModel)]="mi_marca" />
+  </p>
+  <p>
+  <button (click)="getMarca()">Obtener Marca</button>
+  </p>
+  <p>
+  <button (click)="addMarca()" *ngIf="marca_no_repetida.indexOf(mi_marca)<0">Añadir Marca</button>
+  <span *ngIf="!(marca_no_repetida.indexOf(mi_marca)<0)">Marca ya existe</span>
+  </p>
+{{ mi_marca }}
+
 <p>Compra las zapatillas de las mejores marcas</p>
 <ul>
-  <li *ngFor="let marca of marcas; let indice = index">
+  <li *ngFor="let marca of marca_no_repetida; let indice = index">
     {{ indice + " - " + marca }}
   </li>
 </ul>
@@ -32,11 +47,17 @@
 <p>El color de la mayoria de nuestras zapatillas es:</p>
 <ul [ngSwitch]="color">
   <li *ngSwitchCase="'yellow'">
-    El color predominante es el: <span [ngStyle]="{'background':color}">Amarillo</span>.
+    El color predominante es el:
+    <span [ngStyle]="{ background: color }">Amarillo</span>.
   </li>
-  <li *ngSwitchCase="'red'">El color predominante es el: <span [ngStyle]="{'background':color}"></span></li>
-  <li *ngSwitchCase="'blue'">El color predominante es el: <span [ngStyle]="{'background':color}"></span></li>
+  <li *ngSwitchCase="'red'">
+    El color predominante es el: <span [ngStyle]="{ background: color }"></span>
+  </li>
+  <li *ngSwitchCase="'blue'">
+    El color predominante es el: <span [ngStyle]="{ background: color }"></span>
+  </li>
   <li *ngSwitchCase="'orange'">
-    El color predominante es el: <span [ngStyle]="{'background':color}">Naranja</span>
+    El color predominante es el:
+    <span [ngStyle]="{ background: color }">Naranja</span>
   </li>
 </ul>
