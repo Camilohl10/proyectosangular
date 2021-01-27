@@ -13,7 +13,8 @@ import { CelularComponent } from './celular/celular.component';
 
 const appRutes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'zapatilas', component: ZapatillasComponent },
+    { path: 'home', component: HomeComponent },
+    { path: 'zapatillas', component: ZapatillasComponent },
     { path: 'videojuegos', component: VideojuegoComponent },
     { path: 'cursos', component: CursosComponent },
     { path: 'celular', component: CelularComponent },

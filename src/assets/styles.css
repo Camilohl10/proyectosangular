@@ -9,3 +9,28 @@
 .subrayado{
     text-decoration: underline;
 }
+
+.navPrincipal{
+    display: flex;
+    background: chocolate;
+    color: aliceblue;   
+    align-content: space-around;    
+    align-items: flex-end;
+    width: 100%;
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+    margin-left: 10px;
+    cursor: hand;
+    height: 40px;
+    line-height: 40px;
+    background: #ccc;
+    width: 100px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.active{
+    border: 3px solid yellow;
+}

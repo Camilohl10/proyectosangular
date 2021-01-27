@@ -31,6 +31,17 @@
   <!-- <button (click)="toTheTop()">Ir al inicio-Ya</button> -->
 
   <!-- Cargar la etiqueta en la que se cargará dinámicamente  las paginas que tenga el url de la página del navegador.-->
+  
+  <!-- Crear un menú de navegación instantanea -->
+
+  <nav [ngClass]="['navPrincipal']">
+    <a [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>
+    <a [routerLink]="['/zapatillas']" [routerLinkActive]="['active']">Zapatillas</a>
+    <a [routerLink]="['/cursos']" [routerLinkActive]="['active']">Cursos</a>
+    <a [routerLink]="['/celulares']" [routerLinkActive]="['active']">Celulares</a>
+    <a [routerLink]="['/videojuegos']" [routerLinkActive]="['active']">Videojuegos</a>
+  </nav>
+  <hr>
   <router-outlet></router-outlet>  
 </div>
 
