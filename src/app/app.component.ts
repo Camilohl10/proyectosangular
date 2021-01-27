@@ -25,5 +25,14 @@ export class AppComponent implements DoCheck{
   ngDoCheck(){
     console.log("Valor de DoCheck: mostrar_videojuegos: "+ this.mostrar_videojuegos);
   }
+  toTheTop() {
+    scroll({
+        top: 0.0,
+        behavior: "smooth"
+    });
+    /* document.body.scrollTop=0.0; */
+    /* document.documentElement.scrollTop = 0.0;
+    document.documentElement.scrollTop.toString; */
 
+}
 }

@@ -45,8 +45,8 @@
       [ngStyle]="{
         'text-decoration': !deportiva.stock ? 'line-through' : 'none'
       }"
-      >{{ deportiva.nombre }} - <strong>{{ deportiva.precio }}&nbsp;</strong>
-      <span *ngIf="!deportiva.stock">No disponible</span></span
+      >{{ deportiva.nombre }}-  <span [style]="{style:{'height':'0'},animate:{'transitions':'1s',style:{'height':'*'}}}">{{deportiva.marca}}</span> - <strong>{{ deportiva.precio }}&nbsp;</strong>
+      <span *ngIf="!deportiva.stock">Noo disponible</span></span
     >
     <span
       *ngIf="deportiva.precio <= 80 && deportiva.stock"
@@ -84,3 +84,7 @@
     <span [ngStyle]="{ background: color }">Agregar un color</span>
   </li>
 </ul>
+
+<!-- Agregar boton que me lleve hasta arriba -->
+
+<button (click)="toTheTop()">Ir al inicio</button>
