@@ -74,7 +74,13 @@ export class ZapatillasComponent implements OnInit,DoCheck{
     }
 
     addMarca(){
-        this.marcas.push(this.mi_marca);
+        if(this.marcas.indexOf(this.mi_marca)<0){
+                this.marcas.push(this.mi_marca);
+            }   
+            else{
+                alert("Marca ya existe");
+            }
+        /* this.marcas.push(this.mi_marca); */
     }
 
     borrarMarca(indice){
@@ -90,5 +96,11 @@ export class ZapatillasComponent implements OnInit,DoCheck{
 
         /* La función splice elimina elementos del array a partir del indice y la cantidad a eliminar a partir del indice  */        
         this.marca_no_repetida.splice(indice,1);
+    }
+    onBlur(){
+        console.log("Se trabaja en el evento onBlur, has salido del input");
+    }
+    mostrarPalabra(){
+        alert(this.mi_marca);
     }
 }

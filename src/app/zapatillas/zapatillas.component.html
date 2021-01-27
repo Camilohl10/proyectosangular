@@ -6,7 +6,7 @@
 <!-- [(ngModel)] es una directiva -->
 <!-- para usar ngModel hay que importarlo dentro del modulo de la app -->
 <p>
-  <input type="text" name="textp" id="text1" [(ngModel)]="mi_marca" />
+  <input type="text" name="textp" id="text1" #text1 [(ngModel)]="mi_marca" (blur)="onBlur()" (keyup.enter)="mostrarPalabra()" (keyup.enter)="addMarca()"/>
   </p>
   <p>
   <button (click)="getMarca()">Obtener Marca</button>
