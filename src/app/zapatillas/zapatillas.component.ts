@@ -34,10 +34,11 @@ export class ZapatillasComponent implements OnInit,DoCheck{
     ngOnInit(){
         console.log(this.zapatillas);
         this.getMarcas();
+        
     }
     ngDoCheck(){
         console.log("CAMILO");
-        this.getMarcas();
+        /* this.getMarcas(); */
         this.marcasinRepetir();
         console.log("valor de color: ",this.color.length, this.color.trim().length);
     }
@@ -54,9 +55,7 @@ export class ZapatillasComponent implements OnInit,DoCheck{
         console.log(this.marcas); 
     }
 
-    marcasinRepetir(){
-        console.log();
-        
+    marcasinRepetir(){        
         this.marcas.forEach((marca)=>{
             console.log(marca);
             if(this.marca_no_repetida.indexOf(marca) <0){
@@ -76,5 +75,20 @@ export class ZapatillasComponent implements OnInit,DoCheck{
 
     addMarca(){
         this.marcas.push(this.mi_marca);
+    }
+
+    borrarMarca(indice){
+        /* Elimina el elemento y los convierte en undefined */
+        //delete this.marcas[indice];
+
+        /* La función splice elimina elementos del array a partir del indice y la cantidad a eliminar a partir del indice  */
+        this.marcas.splice(indice,1);        
+    }
+    borrarMarcasSinRepetir(indice){
+        /* Elimina el elemento y los convierte en undefined */
+        //delete this.marca_no_repetida[indice];
+
+        /* La función splice elimina elementos del array a partir del indice y la cantidad a eliminar a partir del indice  */        
+        this.marca_no_repetida.splice(indice,1);
     }
 }

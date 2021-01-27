@@ -18,11 +18,27 @@
 {{ mi_marca }}
 
 <p>Compra las zapatillas de las mejores marcas</p>
+<p>Imprimos las marcas que se llenan al iniciar el constructor, se verifican si ya existen no se agregan, pero al final se puede agregar otra marca que ya existe pero no se hace la revisón de existencia. Ojo le agregué una parte en la que se verifica si ya existe pues no se agrega esto en la parte de la vista, en el componnte no.</p>
+<p>Primero se carga esto al iniciar el componente</p>
+<p>Array Marcas</p>
 <ul>
-  <li *ngFor="let marca of marca_no_repetida; let indice = index">
+  <li *ngFor="let marca of marcas; let indice = index">
     {{ indice + " - " + marca }}
+    <button (click)="borrarMarca(indice)">Borrar</button>
+  </li> 
+</ul>
+
+<p>Imprimimos las marcas sin repetir, ojo para poder borrar primero tienes que eliminar las marcas.
+  Este array se carga siempre cuando hagamos cualquier cambio, entonces siempre cargará los datos contenidos en marcas, es por eso que cuando borramos se carga de nuevo el elemento existente en marcas. </p>
+  <p>Array marcasSinRepetir que se obtiene de marcas.</p>
+<ul>
+  <li *ngFor="let marca2 of marca_no_repetida; let indice = index">
+    {{ indice + " - " + marca2 }}
+    <button (click)="borrarMarcasSinRepetir(indice)">Borrar</button>
   </li>
 </ul>
+<!--  -->
+<p>Zapatillas disponibles/Ofetas<p>
 <ul>
   <li *ngFor="let deportiva of zapatillas">
     <span
@@ -47,6 +63,7 @@
 <p>El color de la mayoria de nuestras zapatillas es:</p>
 <label for="text2">Añadir color: </label>
 <input type="text" name="text2" id="textColor" [(ngModel)]="color">
+<!-- Metodo trim() elimina los espacios vacios de un string o cadena. -->
 <ul [ngSwitch]="color.trim()">
   <li *ngSwitchCase="'yellow'">
     El color predominante es el:
