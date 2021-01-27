@@ -11,21 +11,27 @@
   <p>{{ descripcion }}</p>
 
   <!-- Boton para ocultar videojuego -->
-  <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">
+  
+  <!-- <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">
     Ocultar
-  </button>
+  </button> -->
 
-  <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">
+  <!-- <button (click)="ocultarVideojuegos(true)" *ngIf="!mostrar_videojuegos">
     Mostrar
-  </button>
+  </button> -->
 
-  <videojuego *ngIf="mostrar_videojuegos"></videojuego>
+  <!-- <videojuego *ngIf="mostrar_videojuegos"></videojuego> -->
 
   <!-- Usando componente celular  -->
-  <celular></celular>
+  <!-- <celular></celular> -->
   <!-- Usando componente zapatilla -->
-  <zapatilla></zapatilla>
+  <!-- <zapatilla></zapatilla> -->
   <!-- Usando el componente cursos -->
-  <cursos></cursos>
-  <button (click)="toTheTop()">Ir al inicio</button>
+  <!-- <cursos></cursos> -->
+  <!-- <button (click)="toTheTop()">Ir al inicio-Ya</button> -->
+
+  <!-- Cargar la etiqueta en la que se cargará dinámicamente  las paginas que tenga el url de la página del navegador.-->
+  <router-outlet></router-outlet>  
 </div>
+
+

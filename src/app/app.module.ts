@@ -4,6 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 /* Una vez importado hay que cargarlo dentro de imports */
 import { FormsModule } from '@angular/forms'
 
+/* Importamos modulos de rutas */
+import { routing, appRoutingProviders } from './app.routing';
+
 import { AppComponent } from './app.component';
 
 /* Importar componente creado */
@@ -11,6 +14,7 @@ import { VideojuegoComponent} from './videojuego/videojuego.component';
 import { CelularComponent} from './celular/celular.component';
 import { ZapatillasComponent} from './zapatillas/zapatillas.component';
 import { CursosComponent } from './cursos/cursos.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -20,13 +24,17 @@ import { CursosComponent } from './cursos/cursos.component';
     VideojuegoComponent,
     CelularComponent,
     ZapatillasComponent,
-    CursosComponent
+    CursosComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    routing
   ],
-  providers: [],
+  providers: [
+    appRoutingProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
