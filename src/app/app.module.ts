@@ -15,6 +15,7 @@ import { CelularComponent} from './celular/celular.component';
 import { ZapatillasComponent} from './zapatillas/zapatillas.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { HomeComponent } from './home/home.component';
+import { ErrorpaginaComponent } from './errorpagina/errorpagina.component';
 
 
 
@@ -25,7 +26,8 @@ import { HomeComponent } from './home/home.component';
     CelularComponent,
     ZapatillasComponent,
     CursosComponent,
-    HomeComponent
+    HomeComponent,
+    ErrorpaginaComponent
   ],
   imports: [
     BrowserModule,
