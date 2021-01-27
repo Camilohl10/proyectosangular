@@ -1,0 +1,11 @@
+/* Crear la clase de forma globa para nuestro ppágina */
+.altoPrecio{
+    color: gray !important;
+    font-size: 18px !important;
+}
+.fondoRojo{
+    background: red;
+}
+.subrayado{
+    text-decoration: underline;
+}

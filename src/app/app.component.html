@@ -1,10 +1,12 @@
 <!-- [ngStyle]="{'':x|'x',...}" es una directiva de atributos-->
-<div [ngStyle]="{ 
-  'background': config.fondo,
-  'padding': '20px',
-  'border': '5px solid black',
-  'border-color': config.color
- }">
+<div
+  [ngStyle]="{
+    background: config.fondo,
+    padding: '20px',
+    border: '5px solid black',
+    'border-color': config.color
+  }"
+>
   <h1>Bienvenido {{ title }}!</h1>
   <p>{{ descripcion }}</p>
 
@@ -27,4 +29,3 @@
   <cursos></cursos>
   <button (click)="toTheTop()">Ir al inicio</button>
 </div>
-

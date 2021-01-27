@@ -38,6 +38,12 @@
   </li>
 </ul>
 <!--  -->
+<!-- forma basico de usar ngClas -->
+<!-- class="rojo verde" forma común -->
+<!-- [ngClass]="['fondoRojo','subrayado']" -->
+<!-- Asignar clases con condiciones -->
+<!-- [ngClass]="[{
+  'fondoRojo':condicion,'subrayado':condicion}]" -->
 <p>Zapatillas disponibles/Ofetas<p>
 <ul>
   <li *ngFor="let deportiva of zapatillas">
@@ -45,8 +51,14 @@
       [ngStyle]="{
         'text-decoration': !deportiva.stock ? 'line-through' : 'none'
       }"
-      >{{ deportiva.nombre }}-  <span [style]="{style:{'height':'0'},animate:{'transitions':'1s',style:{'height':'*'}}}">{{deportiva.marca}}</span> - <strong>{{ deportiva.precio }}&nbsp;</strong>
-      <span *ngIf="!deportiva.stock">Noo disponible</span></span
+      >{{ deportiva.nombre }}-  <span [style]="{style:{'height':'0'},animate:{'transitions':'1s',style:{'height':'*'}}}">{{deportiva.marca}}</span> - <strong 
+      [class.altoPrecio]="deportiva.precio >= 80"
+      [ngClass]="{
+        'fondoRojo':deportiva.precio > 100,
+        'subrayado':deportiva.marca == 'Nike'
+      }"
+      >{{ deportiva.precio }}&nbsp;</strong>
+      <span *ngIf="!deportiva.stock">Noo disponiblee</span></span
     >
     <span
       *ngIf="deportiva.precio <= 80 && deportiva.stock"
@@ -55,6 +67,7 @@
       [ngStyle]="{
         'text-decoration': deportiva.precio <= 40 ? 'blink' : 'none'
       }"
+      
       >¡EN OFERTA!</span
     >
   </li>
