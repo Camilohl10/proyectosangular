@@ -36,7 +36,14 @@ export class CursosComponent implements OnInit {
       this.apellido = params.apellido;
       /* el más al inicio del  params.followers es para convertir un string a number*/
       this.followers = +params.followers;
-    });
+      if (this.nombre == 'ninguno') {
+        this._router.navigate(['/home']);
+      }
+    });        
+  }
+  
+  redirigir(){
+    this._router.navigate(['/zapatillas']);
   }
 
 }

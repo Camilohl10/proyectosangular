@@ -1,5 +1,9 @@
 <h2>{{titulo}}</h2>
 <p>cursos works!</p>
+
+<!-- el evento click llamará a la función redirigir(), que nos permitirá redigir a otra parte de mi pagina -->
+<button (click)="redirigir()">Llevame a zapatillas</button>
+
 <p class="texto">En el componente cursos hay esto: {{descripcion}}</p>
 
 <h3><span *ngIf="nombre">Bienvenido {{nombre}}</span>&nbsp;<span *ngIf="apellido">{{apellido}}</span></h3>
