@@ -7,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public identificado:boolean;
+  public casado:boolean;
+
+  constructor() { 
+    this.identificado=false;
+    this.casado=false;
+  }
 
   ngOnInit(): void {
+  }
+
+  setIdentificado(){
+    this.identificado=true;
+  }
+  unsetIdentificado(){
+    this.identificado=false;
+  }
+
+  setCasarse(){
+    this.casado=true;
+  }
+  setDivorciarse(){
+    this.casado=false;
   }
 
 }

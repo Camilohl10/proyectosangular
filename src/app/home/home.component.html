@@ -1,1 +1,36 @@
 <p>home works!</p>
+<!-- Hacer uso de la directiva ngTemplate - if else en las vistas -->
+
+<!-- Primero se realiza el if, se pone como parametros condicio verdadera; else nombre de ng-template que tendrá el código en caso de falsa, ojo aqui el ng-template se usa como bloque del else. -->
+<hr style="background: blue; height: 3px;">
+
+<div>
+    <h2>Página principal</h2>
+    
+    <div *ngIf="identificado; else noIdentificado">
+        <h3>Estas identificado en la aplicación.</h3>
+        <button (click)="unsetIdentificado()">Borrar identificación</button>
+    </div>
+    
+    <ng-template #noIdentificado>
+        <p>No estas identificado., pulsa este boton para identifacarte</p>
+        <button (click)="setIdentificado()">Identificarse</button>
+    </ng-template>
+</div>
+
+<hr style="background: blue; height: 3px;">
+
+<div>
+    <h2>Uso del ngTemplate then if else, en el *ngIf se pone la condición, en el otros dos ng-template se pondrá lo que hará si se cumple la condición y o no.</h2>
+    
+    <div *ngIf="casado; then siCasado else noCasado"> </div>
+    <ng-template #siCasado>
+        <h3>Estas Casado suerte.</h3>
+        <button (click)="setDivorciarse()">Divorciarse</button>
+    </ng-template>
+
+    <ng-template #noCasado>
+        <p>No estas Casado., pulsa este boton para casarse</p>
+        <button (click)="setCasarse()">Casarse</button>
+    </ng-template>
+</div>
