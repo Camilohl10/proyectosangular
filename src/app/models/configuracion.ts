@@ -1,4 +1,4 @@
-export var Configuracion ={
+export var Configuracion = {
     color: "red",
     fondo: "#eee",
     titulo: "Al máster en JavaScript y Angular!",

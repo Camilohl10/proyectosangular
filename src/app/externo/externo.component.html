@@ -28,11 +28,36 @@
 <div *ngIf="user">
     <img src="{{user.avatar}}" alt="" srcset="">
     <p>Nombre: {{user.first_name +  ' ' + user.last_name}}</p>
-    <p>MEmail: {{user.email}}</p>
+    <p>Email: {{user.email}}</p>
 </div>
 <div class="card">
     <div class="card-body">
         <h5 class="card-title">Hola mudo</h5>
         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsam, nulla eaque amet excepturi reiciendis consequatur ratione nesciunt saepe facere.</p>
     </div>
+</div>
+<hr>
+<h2>Crear usuario</h2>
+<!-- el nombre de formulario en angular no debe de coincidir con el método que se ejecutará al hacer submit ejemplo <form action="#" #newUser="ngForm" (ngSubmit)="newUser(newUser)"> dará error-->
+<form action="#" #newUser="ngForm" (ngSubmit)="addUserFom(newUser)">
+
+    <p>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name" #name="ngModel" [(ngModel)]="new_user.name" required>
+        <span *ngIf="name.touched && !name.valid">Nombre requerido</span>
+    </p>
+    <p>
+        <label for="job">Trabajo</label>
+        <input type="text" name="job" id="job" #job="ngModel" [(ngModel)]="new_user.job" required>
+        <span *ngIf="job.touched && !job.valid">Trabajo requerido</span>
+    </p>
+    <input type="submit" value="Guardar usuario" [disabled]="!newUser.form.valid">
+
+</form> 
+
+<hr>
+<div *ngIf="usuario_guardado">
+    <p>Datos guardado</p>
+    <h2>{{usuario_guardado.name}}</h2>
+    <h2>{{usuario_guardado.job}}</h2>
 </div>

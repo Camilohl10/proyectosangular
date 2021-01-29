@@ -9,38 +9,60 @@ import { PeticionesService } from '../service/peticiones.services';
   providers: [PeticionesService]
 })
 export class ExternoComponent implements OnInit {
-  public user:any;
-  public userId:number;
-  public fecha:any;
-  public fechaFiltro:any;
-  public fechaParame:any;
-  
+  public user: any;
+  public userId: number;
+  public fecha: any;
+  public fechaFiltro: any;
+  public fechaParame: any;
+
+  public new_user: any;
+  public usuario_guardado: any;
+
   constructor(
-    private _peticionesService:PeticionesService
-  ) { 
-    this.userId=1;
+    private _peticionesService: PeticionesService
+  ) {
+    this.userId = 1;
+    this.new_user = {
+      "name": "",
+      "job": ""
+    };
   }
 
 
   ngOnInit(): void {
     /* Para obetener el resultado ponemos el metodo susbcribe, esta a su vez tiene dos metodos callback, resultado y error.*/
     this.cargaUsuario();
-    this.fecha =new Date();    
-    this.fechaParame=new Date(2021,0,5);    
-    this.fechaFiltro=new Date();    
+    this.fecha = new Date();
+    this.fechaParame = new Date(2021, 0, 5);
+    this.fechaFiltro = new Date();
   }
 
   /* hacemos la petición al servicio para ello obtenemos el metodo getUser y le enviamos el parametro this.userId que tiene el valor que le damos en la plantilla con ngModel, para obtener los datos hacemos uso de subscribe y en ella teemos los metodos de callback resultado-satisfactorio y error */
-  cargaUsuario(){
-    this.user=false;
+  cargaUsuario() {
+    this.user = false;
     this._peticionesService.getUser(this.userId).subscribe(
       result => {
         console.log(result);
-        this.user=result.data;
-        console.log('Valor de user: ',this.user);
+        this.user = result.data;
+        console.log('Valor de user: ', this.user);
       },
-      error=>{
+      error => {
         console.log(<any>error);
+      }
+    );
+  }
+
+  addUserFom(form) {
+    this._peticionesService.addUser(this.new_user).subscribe(
+      response => {
+        console.log(response);
+        this.usuario_guardado = response;
+        form.reset();
+
+      },
+      error => {
+        console.log("Hay errores");
+        console.log('Hay un error' + <any>error);
       }
     );
   }

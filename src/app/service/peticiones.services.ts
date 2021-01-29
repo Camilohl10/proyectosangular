@@ -19,9 +19,21 @@ export class PeticionesService {
         this.url = "https://reqres.in";
     }
     /* Obtenermos un usuario del api */
-    /* Le diremos que devolvea un dato de tipo Observable */
+    /* Le diremos que devuelva un dato de tipo Observable */
+    //le recibimos el id del usuario y hacemos la petición tipo get
     getUser(userId):Observable<any>{
         return this._http.get(this.url+'/api/users/'+userId);
     }
+
+    /* Hacemos una petición post*/
+    /* recibimos el usuario en formato string y con el JSON.stringify(user) lo convertimos a json y lo asignamo en la variable let param_json */
+    /* creamos una variable headers y le asignamos el valor de la cabecera, para le asignamos un nuevo HttpHeaders().set('nombre-cabecera','valor para establecer o anular la cabecera dado') */
+    addUser(user):Observable<any>{
+        let param_json = JSON.stringify(user);
+        let headers = new HttpHeaders().set('Content-Type','application/json');
+
+        return this._http.post(this.url+'/api/users',param_json,{headers:headers});
+    }
+    
 
 }
