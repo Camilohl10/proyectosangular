@@ -34,8 +34,8 @@ export class ZapatillasComponent implements OnInit, DoCheck {
         console.log(this.zapatillas);
         alert(this._zapatillaService.getTexto());        
         this.getMarcas();
-
     }
+    
     ngDoCheck() {
         console.log("CAMILO");
         /* this.getMarcas(); */

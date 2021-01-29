@@ -10,6 +10,7 @@ import { CursosComponent } from './cursos/cursos.component';
 import { CelularComponent } from './celular/celular.component';
 import { ErrorpaginaComponent } from './errorpagina/errorpagina.component';
 import { ExternoComponent } from './externo/externo.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 /* Array de rutas */
 /* Para obtener valores desde el navegador a traves de parametros se realiza de la siguiente manera */
@@ -28,6 +29,7 @@ const appRutes: Routes = [
     { path: 'cursos/:nombre/:apellido/:followers', component: CursosComponent },
     { path: 'externo', component: ExternoComponent },
     { path: 'celular', component: CelularComponent },
+    { path: 'contacto', component: ContactoComponent },
     { path: '**', component: ErrorpaginaComponent }
 ];
 

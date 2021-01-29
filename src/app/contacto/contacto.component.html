@@ -1,0 +1,41 @@
+<p>contacto works!</p>
+<p>{{usuario.nombre}}</p>
+<p>{{usuario.apellido}}</p>
+<p>{{usuario.email}}</p>
+<p>{{usuario.mensaje}}</p>
+
+<!--  Para convertir un formulario en formulario angular le ponemos la directiva ngForm-->
+<!-- Tambien se usará el evento ngSubmit para que al momento de hacer submit se ejecute un método -->
+
+<!-- Para validar el los datos del formulario se utilizan la validación por html o usando las directivas -->
+<!-- Para resetear los datos del formulario enviamos el formulario al componente en el metodo onSubmit(formContacto) y ahí resetearlo-->
+<form action="#" #formContacto="ngForm" (ngSubmit)="onSubmit(formContacto)">
+
+    <!-- En cada uno de los inputs se le debe de poner un campo de formulario de angular #nombreCampo="ngModel" -->
+    <!-- Tambien se debe de poner la el two way databindig [(ngModel)] -->
+
+    <label for="nombre">Nombre</label>
+    <br>
+    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" required pattern="[a-zA-Z]+" >
+    <span *ngIf="nombre.touched && !nombre.valid">El nombre es obligatorio.</span>
+    <br>
+    <label for="apellido">Apellido</label>
+    <br>
+    <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="usuario.apellido" required>
+    <span *ngIf="apellido.touched && !apellido.valid">Los apellidos es obligatorio.</span>
+    <br>
+    <label for="email">Email</label>
+    <br>
+    <input type="email" name="email" #email="ngModel" [(ngModel)]="usuario.email" required >
+    <span *ngIf="email.touched && !email.valid">El email es obligatorio.</span>
+    <br>
+    <label for="mensaje">Mensaje</label>
+    <br>
+    <textarea name="mensaje" id="text1" cols="30" rows="5" #mensaje="ngModel" [(ngModel)]="usuario.mensaje" required></textarea>
+    <span *ngIf="mensaje.touched && !mensaje.valid">El mensaje es obligatorio</span>
+    <br>
+    <br>
+    <!-- En el imput submit ponemos el atributo disable si en caso de que no sea valido, se desabilita en caso de que no sea válido -->
+    <input type="submit" value="Enviar" [disabled]="!formContacto.valid">
+    <input type="reset" value="Resetear formulario">
+</form>

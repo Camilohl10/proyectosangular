@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
+/* Cargamos nuestra pipe personalizado y lo ponemos e declarations*/
+import { CalculadoraPipe } from './pipes/calculadora.pipes';
 
 /* Importar componente creado */
 import { VideojuegoComponent} from './videojuego/videojuego.component';
@@ -21,8 +23,7 @@ import { CursosComponent } from './cursos/cursos.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorpaginaComponent } from './errorpagina/errorpagina.component';
 import { ExternoComponent } from './externo/externo.component';
-/* Cargamos nuestra pipe personalizado y lo ponemos e declarations*/
-import { CalculadoraPipe } from './pipes/calculadora.pipes';
+import { ContactoComponent } from './contacto/contacto.component';
 
 
 
@@ -37,7 +38,8 @@ import { CalculadoraPipe } from './pipes/calculadora.pipes';
     HomeComponent,
     ErrorpaginaComponent,
     ExternoComponent,
-    CalculadoraPipe
+    CalculadoraPipe,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
