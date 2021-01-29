@@ -1,19 +1,26 @@
+
 <p>Componente Externo</p>
+
 <!-- Se crea un input para mostrar un usuario segun el dato insertado, esto cargará de manera automática con el ngModel haciendo click. Si user es true se muestran los datos, si no no se muestran los datos. -->
 
 <!-- Imprimimos la fecha usando pipe -->
 <p>Imprimimos la fecha usando pipe/filtros</p>
 <p>Fecha sin filtro: {{fecha}}</p>
 <p>Fecha con parametros especificados: {{fechaParame}}</p>
+
 <!-- Para usar filtros hay que usar la tuberia o el simbolo solo O -->
 <!-- Ojo que podemos agregar pipes de librerias externas ejemplo los pipe que ofrece angular -->
 <!-- También tenemos la posibilidad de agregar filtro en los textos o cadenas he aqui unos ejemplos. -->
 <p>Fecha con filtro fecha: {{fechaFiltro | date:'fullDate'}}</p>
 <p>Fecha con filtro fecha y texto: {{fechaFiltro | date:'fullDate' | uppercase}}</p>
 <p>Fecha con filtro 2: {{ fechaFiltro | date:'dd/MM/yyyy' }}</p>
-{{ 'HOLA MUNDO USANDO PIPES' | lowercase}}
+<p>Usando pipe en texto: {{ 'HOLA MUNDO USANDO PIPES' | lowercase}}</p>
+<!-- Usamos el pipe creado -->
+<p>Usando el pipe personalizado: {{3 | calculadora: 2}}</p>
 
-<p>Obtenemos los datos a través de Servicios, HTTP y Ajax.</p>
+
+
+<h4>Obtenemos los datos a través de Servicios, HTTP y Ajax.</h4>
 <input type="text" name="" id="" [(ngModel)]="userId" (keyup.enter)='cargaUsuario()'>
 <div *ngIf="!user">
     <img src="https://tenor.com/view/loading-cargando-gif-15269201.gif" width="130px" alt="" srcset="">    
@@ -22,4 +29,10 @@
     <img src="{{user.avatar}}" alt="" srcset="">
     <p>Nombre: {{user.first_name +  ' ' + user.last_name}}</p>
     <p>MEmail: {{user.email}}</p>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Hola mudo</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ipsam, nulla eaque amet excepturi reiciendis consequatur ratione nesciunt saepe facere.</p>
+    </div>
 </div>

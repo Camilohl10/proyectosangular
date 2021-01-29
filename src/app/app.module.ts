@@ -21,6 +21,9 @@ import { CursosComponent } from './cursos/cursos.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorpaginaComponent } from './errorpagina/errorpagina.component';
 import { ExternoComponent } from './externo/externo.component';
+/* Cargamos nuestra pipe personalizado y lo ponemos e declarations*/
+import { CalculadoraPipe } from './pipes/calculadora.pipes';
+
 
 
 
@@ -33,7 +36,8 @@ import { ExternoComponent } from './externo/externo.component';
     CursosComponent,
     HomeComponent,
     ErrorpaginaComponent,
-    ExternoComponent
+    ExternoComponent,
+    CalculadoraPipe
   ],
   imports: [
     BrowserModule,

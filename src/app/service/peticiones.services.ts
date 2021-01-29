@@ -4,8 +4,8 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 /* Importamos el observable ya que a traves de ella vamos a recoger la información que  nos devuele el api rest cuando hagamos una petición */
-/* exjs es una libreria que hemos instalado con el proyecto. */
-import { Observable } from "rxjs";
+/* exjs es  una libreria que hemos instalado con el proyecto. */
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 
