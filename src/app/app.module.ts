@@ -4,8 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 /* Una vez importado hay que cargarlo dentro de imports */
 import { FormsModule } from '@angular/forms'
 
-/* Importamos modulos de rutas */
+/* Importamos modulos para trabajar con rutas */
 import { routing, appRoutingProviders } from './app.routing';
+
+/* Importamos el modulo httpClienModule para trabajar con las peticiones Ajax  despues lo tenemos que cargar en servicios o inports*/
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 
@@ -16,6 +20,7 @@ import { ZapatillasComponent} from './zapatillas/zapatillas.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorpaginaComponent } from './errorpagina/errorpagina.component';
+import { ExternoComponent } from './externo/externo.component';
 
 
 
@@ -27,12 +32,14 @@ import { ErrorpaginaComponent } from './errorpagina/errorpagina.component';
     ZapatillasComponent,
     CursosComponent,
     HomeComponent,
-    ErrorpaginaComponent
+    ErrorpaginaComponent,
+    ExternoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    HttpClientModule
   ],
   providers: [
     appRoutingProviders

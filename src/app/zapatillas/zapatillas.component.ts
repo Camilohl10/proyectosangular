@@ -1,12 +1,15 @@
 import { Component, OnInit, DoCheck } from '@angular/core'
-import { Scroll } from '@angular/router';
-import { off } from 'process';
 /* Se importa la clase Zapatilla de modelo/zapatilla*/
-import { Zapatilla } from '../models/zapatilla'
+import { Zapatilla } from '../models/zapatilla';
+import { ZapatillaService } from '../service/zapatilla.service';
+
+/* Importamos el servicio ZapatillaService */
+/* Despues de esto debemos agregar dentro del injectable del compoenente en l apropiedad provider */
 
 @Component({
     selector: 'zapatilla',
-    templateUrl: './zapatillas.component.html'
+    templateUrl: './zapatillas.component.html',
+    providers: [ZapatillaService]
 })
 
 export class ZapatillasComponent implements OnInit, DoCheck {
@@ -18,22 +21,18 @@ export class ZapatillasComponent implements OnInit, DoCheck {
     public mi_marca: string;
     public marca_no_repetida: String[];
 
-    constructor() {
+
+    /* Inyectamos el servicio de ZapatillasService al constructor */
+    constructor(private _zapatillaService: ZapatillaService) {
         /* Se tiene que crear un array a la propiedad marcas, por que abajo se utiliza con el push */
         this.color = "yellow",
             this.marcas = new Array(),
-            this.marca_no_repetida = new Array(),
-            this.zapatillas = [
-                new Zapatilla('Nike Airmax', 'Nike', 'Rojas', 40, true),
-                new Zapatilla('Reebook Classic', 'Reebook', 'Blanco', 80, false),
-                new Zapatilla('Reebook Spantan', 'Reebook', 'Negro', 180, false),
-                new Zapatilla('Nike Runner MD', 'Nike', 'Negras', 60, true),
-                new Zapatilla('Nike Cerena', 'Puma', 'Verde', 30, true),
-                new Zapatilla('Adidas Yezzy', 'Adidas', 'Gris', 180, false)
-            ];
+            this.marca_no_repetida = new Array()            
     }
     ngOnInit() {
+        this.zapatillas = this._zapatillaService.getZapatillas();
         console.log(this.zapatillas);
+        alert(this._zapatillaService.getTexto());        
         this.getMarcas();
 
     }

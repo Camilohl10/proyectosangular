@@ -1,0 +1,11 @@
+<p>Componente Externo</p>
+<!-- Se crea un input para mostrar un usuario segun el dato insertado, esto cargará de manera automática con el ngModel haciendo click. Si user es true se muestran los datos, si no no se muestran los datos. -->
+<input type="text" name="" id="" [(ngModel)]="userId" (keyup.enter)='cargaUsuario()'>
+<div *ngIf="!user">
+    <img src="https://tenor.com/view/loading-cargando-gif-15269201.gif" width="130px" alt="" srcset="">    
+</div>
+<div *ngIf="user">
+    <img src="{{user.avatar}}" alt="" srcset="">
+    <p>Nombre: {{user.first_name +  ' ' + user.last_name}}</p>
+    <p>MEmail: {{user.email}}</p>
+</div>
